@@ -83,6 +83,12 @@ export default class MessageContainer extends React.PureComponent {
     }
   }
 
+  scrollToIndex(scrollIndex) {
+    if (this.flatListRef) {
+      this.flatListRef.scrollToIndex(scrollIndex);
+    }
+  }
+
   renderRow({ item, index }) {
     if (!item._id && item._id !== 0) {
       console.warn('GiftedChat: `_id` is missing for message', JSON.stringify(item));
